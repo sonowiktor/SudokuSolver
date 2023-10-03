@@ -18,4 +18,22 @@ public class sudokuSolver {
 		
 	}
 
+	private static boolean isNumberInRow(int[][] sudokuBoard, int number, int row) {
+		for (int i = 0; i < GRID_SIZE; i++)  {
+			if(sudokuBoard[row][i] == number) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	private static boolean isNumberInColumn(int[][] sudokuBoard, int number, int column) {
+		for (int i = 0; i < GRID_SIZE; i++)  {
+			if(sudokuBoard[i][column] == number) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 }
