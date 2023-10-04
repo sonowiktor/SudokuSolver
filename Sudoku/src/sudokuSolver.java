@@ -36,4 +36,17 @@ public class sudokuSolver {
 		return false;
 	}
 
+	private static boolean isNumberInBox(int[][] sudokuBoard, int number, int row, int column) {
+		int boxRow = row - row % 3;
+		int boxColumn = column - column % 3;
+		for (int i = boxRow; i < boxRow + 3; i++)  {
+			for(int j = boxColumn; j < boxColumn + 3; j++) {
+				if(sudokuBoard[i][j] == number) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
 }
