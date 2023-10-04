@@ -15,6 +15,12 @@ public class sudokuSolver {
 				{0, 0, 0, 2, 0, 0, 0, 0, 0},
 				{0, 0, 7, 0, 4, 0, 2, 0, 3}
 		};
+
+	if(solveTheBoard(sudokuBoard)) {
+			System.out.println("Sudoku has been solved successfully");
+		} else {
+			System.out.println("It is impossible to solve this board. We are really sorry");
+		}
 		
 	}
 
