@@ -21,7 +21,18 @@ public class sudokuSolver {
 		} else {
 			System.out.println("It is impossible to solve this board. We are really sorry");
 		}
+
+	printTheBoard(sudokuBoard);
 		
+	}
+
+	private static void printTheBoard(int[][] sudokuBoard) {
+		for(int row = 0; row < GRID_SIZE; row++) {
+			for(int column = 0; column < GRID_SIZE; column++) {
+				System.out.print(sudokuBoard[row][column]);
+			}
+			System.out.println();
+		}
 	}
 
 	private static boolean isNumberInRow(int[][] sudokuBoard, int number, int row) {
