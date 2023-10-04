@@ -54,4 +54,25 @@ public class sudokuSolver {
 				&& !isNumberInBox(sudokuBoard, number, row, column);
 	}
 
+	private static boolean solveTheBoard(int[][] sudokuBoard) {
+		for (int row = 0; row < GRID_SIZE; row++)  {
+			for (int column = 0; column < GRID_SIZE; column++)  {
+				if(sudokuBoard[row][column] == 0) {
+					for(int givenNumber = 1; givenNumber <= GRID_SIZE; givenNumber++) {
+						if(isPlacementValid(sudokuBoard, givenNumber, row, column)) {
+							sudokuBoard[row][column] = givenNumber;
+							
+							if(solveTheBoard(sudokuBoard)) {
+								return true;
+							} else {
+								sudokuBoard[row][column] = 0;
+							}
+						}
+					}
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 }
