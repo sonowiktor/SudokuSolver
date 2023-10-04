@@ -49,4 +49,9 @@ public class sudokuSolver {
 		return false;
 	}
 
+	private static boolean isPlacementValid(int[][] sudokuBoard, int number, int row, int column) {
+		return !isNumberInRow(sudokuBoard, number, row) && !isNumberInColumn(sudokuBoard, number, column)
+				&& !isNumberInBox(sudokuBoard, number, row, column);
+	}
+
 }
